@@ -1,3 +1,11 @@
+STOP - One must create a Docker image with Jupyterhub within it
+
+NGINX should also be in a Docker image and route to the other Docker Images
+
+Google Buckets can be fully accessible to the world without keys
+
+
+
 
 # Created VM
 
