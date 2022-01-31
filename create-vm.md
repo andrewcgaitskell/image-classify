@@ -32,7 +32,7 @@
     ?? sudo npm install -g configurable-http-proxy
     sudo npm init
   
-    npm install configurable-http-proxy
+    sudo npm install configurable-http-proxy
 
   
     pipenv install -r my_requirements_jupyterlab.txt
