@@ -8,7 +8,7 @@
     sudo apt install nodejs
     sudo apt install npm
     sudo apt install python3-pip
-    git clone https://github.com/andrewcgaitskell/dash-template.git
+    git clone https://github.com/andrewcgaitskell/image-editor.git
     cd dash-template
     pip install --user pipenv
     export PATH=$PATH:/home/andrew_gaitskell/.local/bin
@@ -17,14 +17,14 @@
     
 ## installed python version
 
-    python --version
+    python3 --version
     
     ### edit pipfile and add python version
     nano Pipfile
     
 ## install python packages
 
-    pipenv --python 3.9.5 install pandas
+    pipenv --python 3.9.7 install pandas
     
 ## Jupyterlab Setting Up
 
