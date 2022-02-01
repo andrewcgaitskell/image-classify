@@ -5,6 +5,8 @@ sudo apt-get install --no-install-recommends ubuntu-desktop
 
 # install vino
 
+https://help.ubuntu.com/community/VNC/Servers
+
 https://gist.github.com/samba/69e1ca11f9d04f218b9b
 
     #!/bin/sh
