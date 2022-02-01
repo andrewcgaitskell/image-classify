@@ -27,7 +27,6 @@ https://gist.github.com/samba/69e1ca11f9d04f218b9b
 
     # Set a bunch of useful defaults. (for remote support cases.)
     gsettings reset org.gnome.Vino network-interface
-    gsettings set org.gnome.Vino enabled true
     gsettings set org.gnome.Vino prompt-enabled false 
     gsettings set org.gnome.Vino notify-on-connect true
     gsettings set org.gnome.Vino require-encryption ${USE_ENCRYPTION}  
