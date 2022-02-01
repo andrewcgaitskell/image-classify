@@ -1,4 +1,8 @@
 
+# create new user
+
+sudo adduser username
+
 # install gnome desktop
 
 sudo apt-get install --no-install-recommends ubuntu-desktop
