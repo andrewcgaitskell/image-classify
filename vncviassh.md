@@ -84,7 +84,11 @@ gpg2 --gen-key
 # create the password store using the gpg user id
 pass init $gpg_id
 
-echo -n 'password' | secret-tool store --label="GNOME Remote Desktop VNC password" "xdg:schema" "org.gnome.RemoteDesktop.VncPassword"
-        systemctl --user start gnome-remote-desktop.service
-        loginctl unlock-session $(loginctl --no-legend --value list-sessions | awk '/seat/ { print $1}')
+dbus-launch echo -n 'password' | secret-tool store --label="GNOME Remote Desktop VNC password" "xdg:schema" "org.gnome.RemoteDesktop.VncPassword"
+ 
+sudo dbus-launch secret-tool store --label="GNOME Remote Desktop VNC password" "xdg:schema" "org.gnome.RemoteDesktop.VncPassword"
+ 
+systemctl --user start gnome-remote-desktop.service
+
+loginctl unlock-session $(loginctl --no-legend --value list-sessions | awk '/seat/ { print $1}')
 
