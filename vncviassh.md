@@ -73,7 +73,18 @@ systemctl --user start gnome-remote-desktop.service
 
         gsettings set org.gnome.desktop.remote-desktop.vnc auth-method 'password'
         gsettings set org.gnome.desktop.remote-desktop.vnc view-only false
-        echo -n 'password' | secret-tool store --label="GNOME Remote Desktop VNC password" "xdg:schema" "org.gnome.RemoteDesktop.VncPassword"
+
+# install pass
+
+sudo apt-get install pass gnupg2
+
+# create a gpg2 key
+gpg2 --gen-key
+
+# create the password store using the gpg user id
+pass init $gpg_id
+
+echo -n 'password' | secret-tool store --label="GNOME Remote Desktop VNC password" "xdg:schema" "org.gnome.RemoteDesktop.VncPassword"
         systemctl --user start gnome-remote-desktop.service
         loginctl unlock-session $(loginctl --no-legend --value list-sessions | awk '/seat/ { print $1}')
 
