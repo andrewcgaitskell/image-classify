@@ -69,3 +69,11 @@ sudo apt install gnome-remote-desktop
 systemctl --user enable gnome-remote-desktop.service
 systemctl --user start gnome-remote-desktop.service
 
+# configure remote desktop
+
+gsettings set org.gnome.desktop.remote-desktop.vnc auth-method 'password'
+gsettings set org.gnome.desktop.remote-desktop.vnc view-only false
+echo -n 'password' | secret-tool store --label="GNOME Remote Desktop VNC password" "xdg:schema" "org.gnome.RemoteDesktop.VncPassword"
+systemctl --user start gnome-remote-desktop.service
+loginctl unlock-session $(loginctl --no-legend --value list-sessions | awk '/seat/ { print $1}')
+
