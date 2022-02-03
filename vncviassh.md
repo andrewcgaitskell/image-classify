@@ -59,3 +59,13 @@ The tunnel has now been created.
 To connect to the remote desktop, use the same client as in the first part of the tutorial - any VNC client you like.
 
 Enter localhost:61000 as the VNC server.
+
+# install gnome-remote-desktop
+
+sudo apt install gnome-remote-desktop
+
+# start gnome-remote-desktop
+
+systemctl --user enable gnome-remote-desktop.service
+systemctl --user start gnome-remote-desktop.service
+
